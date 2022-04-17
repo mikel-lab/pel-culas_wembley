@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PopularMovieTableViewController: UIViewController {
     
@@ -49,7 +50,7 @@ extension PopularMovieTableViewController: UITableViewDataSource {
         
         if movies.count > indexPath.row {
             let movie = movies[indexPath.row]
-            
+    
             cell.configureViews(image: movie.backdropPath,
                                 title: movie.title,
                                 description: movie.overview)

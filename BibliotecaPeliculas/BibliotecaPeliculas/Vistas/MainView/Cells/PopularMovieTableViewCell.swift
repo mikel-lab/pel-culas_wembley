@@ -39,7 +39,8 @@ class PopularMovieTableViewCell: UITableViewCell {
     
     func configureViews(image: String? = nil, title: String? = nil, description: String? = nil){
         
-        self.imageCell?.image = UIImage(named: image ?? "")
+        //self.imageCell?.image = UIImage(named: image ?? "")
+        self.imageCell?.kf.setImage(with: URL(string: "http://image.tmdb.org/t/p/w185\(image ?? "launch_cinema")"))
         self.title?.text = title
         self.overviewLabel?.text = description
  
