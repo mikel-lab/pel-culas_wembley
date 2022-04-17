@@ -30,7 +30,7 @@ class PopularMovieTableViewController: UIViewController {
             print(movies)
             self.movies = movies
         } failure: { error in
-            print(error)
+            print(error ?? "ha habido un error")
         }
         
     }
