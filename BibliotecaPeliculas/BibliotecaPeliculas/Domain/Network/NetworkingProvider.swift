@@ -16,12 +16,10 @@ final class NetworkingProvider{
     private let baseUrl = "https://api.themoviedb.org/3"
     private let statusOk = 200...299
     
-
+    
     func getPopularMovies(success: @escaping (_ movies: [Result]) -> (), failure: @escaping (_ error: Error?) -> ()){
         
         let url = "\(baseUrl)/movie/popular/?api_key=\(apiKey)"
-        
-    
         
         
         AF.request(url, method: .get).responseData { (response) in
@@ -35,11 +33,12 @@ final class NetworkingProvider{
                     let movies = try decoder.decode(MovieResponse.self, from: value)
                     success(movies.results)
                 } catch {
-                    print(error.localizedDescription)
+                    print(error)
                 }
             }
  
     }
 }
+
 
 }
